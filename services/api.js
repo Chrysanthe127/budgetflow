@@ -15,23 +15,23 @@ api.interceptors.request.use((config) => {
 });
 
 export const login = async (username, password) => {
-  const response = await axios.post('http://budgetflow-backend-c4uu.onrender.com/api/token/', { username, password });
+  const response = await axios.post('https://budgetflow-backend-c4uu.onrender.com/api/token/', { username, password });
   localStorage.setItem('access_token', response.data.access);
   return response.data;
 };
 
 export const register = async (username, password, email = '') => {
-  const response = await axios.post('http://budgetflow-backend-c4uu.onrender.com/api/register/', { username, password, email });
+  const response = await axios.post('https://budgetflow-backend-c4uu.onrender.com/api/register/', { username, password, email });
   return response.data;
 };
 
 export const forgotPassword = async (email) => {
-  const response = await axios.post('http://budgetflow-backend-c4uu.onrender.com/api/forgot-password/', { email });
+  const response = await axios.post('https://budgetflow-backend-c4uu.onrender.com/api/forgot-password/', { email });
   return response.data;
 };
 
 export const resetPasswordConfirm = async (uid, token, newPassword) => {
-  const response = await axios.post('http://budgetflow-backend-c4uu.onrender.com/api/reset-password-confirm/', { uid, token, new_password: newPassword });
+  const response = await axios.post('https://budgetflow-backend-c4uu.onrender.com/api/reset-password-confirm/', { uid, token, new_password: newPassword });
   return response.data;
 };
 
